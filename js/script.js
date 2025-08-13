@@ -1,3 +1,94 @@
+//vetores, parte 2
+//mapreduce
+// const valores = [1, 2, 3, 4]
+// const soma = valores.reduce((ac, v) => ac + v)
+// console.log(soma)
+
+// const nomes = ['Ana Maria', 'Antonio', 'Rodrigo', 'Alex', 'Cristina']
+// const todosComecamComA = nomes.every(n => n.startsWith('A'))
+// console.log(todosComecamComA)
+// const peloMenosUmComecamComA = nomes.some(n => n.startsWith('A'))
+// console.log(peloMenosUmComecamComA)
+//dado a coleção a seguir, produzir outra coleção contendo o quadrado de cada número
+//usando arrow functions e digitando a menor quantidade de caracteres possivel
+// const numeros = [1, 2, 3]
+// const sqrt = numeros.map(numero => numero * numero)
+// console.log(sqrt)
+//
+// const nomes = ['Ana Maria', 'Antonio', 'Rodrigo', 'Alex', 'Cristina']
+// const res = nomes.map(function(nome){return nome[0]})
+// console.log(res)
+//
+// const nomes = ['Ana Maria', 'Antonio', 'Rodrigo', 'Alex', 'Cristina']
+// const apenasComA = nomes.filter(nome => nome.startsWith('A'))
+// console.log(apenasComA)
+//arrow function
+//tem exatamente um parâmetro: parênteses podem ser omitidos
+// const dobro = n => 2 * n
+// console.log(dobro(2))
+//tem somente uma linha que produz um valor a ser devolvido
+// const dobro = (n) => 2 * n
+// console.log(dobro(5))
+//
+//em caso de chaves, é necessário o uso do return
+// const dobro = (n) => {
+//     console.log('Calculando o dobro...')
+//     return 2 * n 
+// }
+// console.log(dobro(5))
+//
+//tem somente uma linha: as chaves podem ser omitidas
+// const hello = () => console.log('Hello')
+// hello()
+// const hello = () => {
+//     console.log('Hello')
+// }
+// hello()
+//
+// função
+// const triplo = function(n=5){
+//     return 3* n
+// }
+//
+// console.log(triplo(undefined))
+// console.log(triplo(10))
+//
+// const dobro = function (n){
+//     return 2 * n
+// }
+//
+// console.log(dobro(6))
+// function soma(a,b){
+//     return a + b
+// }
+// const res = soma(2,3)
+// console.log(res)
+//
+// function hello(){
+//     console.log('oi')
+// }
+// hello()
+//
+// function hello(nome){
+//     console.log('helo, ' + nome)
+// }
+// hello('Anna')
+//
+//vetores
+// v2 = [2, "abc", true]
+// console.log(v2)
+// for(let i=0; i< v2.length; i++){
+//     console.log(v2[i])
+// } 
+// v1 = []
+// console.log(v1.length)
+// v1[0] = 3.4
+// console.log (v1.length)
+// v1[10] = 2
+// console.log(v1.length)
+// v1[7] = "abc"
+
+
 //comparação
 // console.log([] == [])
 // console.log([1] == [1])
