@@ -1,31 +1,63 @@
+console.log("Comencando")
+function calculoRapido(n){
+    return n >= 0 ? Promise.resolve((n/2) * (n+1)) : Promise.reject(console.log('Somente valores positivos, por favor'))
+}
+let minhaPromise = calculoRapido(10)
+minhaPromise = calculoRapido(0)
+minhaPromise = calculoRapido(-1)
+ 
+minhaPromise.then(res => console.log(`Resultdo: ${res}`)
+).catch(erro => console.log(`Erro ${erro}`))
+console.log("Terminano...")
+ 
+// function calculoDemorado(n){
+//     let p = new Promise(function (resolve, reject){
+//         let res = 0
+//         for(let i = 0; i <= n; i++){
+//             res+= i
+//         }
+//         resolve(res)
+//     })
+//     return p
+// }
+ 
+// let minhaPromise = calculoDemorado(10)
+// //then/catch
+// minhaPromise.then((somatorio) => {
+//     console.log(`Somatório: ${somatorio}`)
+// })
+// .catch((erro) => {
+//     console.log(`Erro: ${erro}`)
+// })
+// console.log('Terminando o script principal...')
 //inferno de callbacks
 //callback hell
-const fs = require('fs')
-const abrirArquivo = function(nomeArquivo){
-    const exibirConteudo = function(erro, conteudo){
-        if(erro){
-            console.log(`Deu erro: ${erro}`)
-        }
-        else{
-            console.log(`Conteúdo: ${conteudo}`)
-            const dobro = Number(conteudo.toString()) * 2
-            const finalizar = function(erro){
-                if(erro){
-                    console.log(`Deu erro escrevendo o dobro: ${erro}`)
-                }
-                else{
-                    console.log('A escrita do dobro deu certo')
-                }
-            }
-            fs.writeFile('dobro.txt', dobro.toString(), finalizar)
-            console.log('Fim da exibirConteudo...')
-        }
-    }
-    fs.readFile(nomeArquivo, exibirConteudo)
-    console.log('Fim da abrirArquivo...')
-}
+// const fs = require('fs')
+// const abrirArquivo = function(nomeArquivo){
+//     const exibirConteudo = function(erro, conteudo){
+//         if(erro){
+//             console.log(`Deu erro: ${erro}`)
+//         }
+//         else{
+//             console.log(`Conteúdo: ${conteudo}`)
+//             const dobro = Number(conteudo.toString()) * 2
+//             const finalizar = function(erro){
+//                 if(erro){
+//                     console.log(`Deu erro escrevendo o dobro: ${erro}`)
+//                 }
+//                 else{
+//                     console.log('A escrita do dobro deu certo')
+//                 }
+//             }
+//             fs.writeFile('dobro.txt', dobro.toString(), finalizar)
+//             console.log('Fim da exibirConteudo...')
+//         }
+//     }
+//     fs.readFile(nomeArquivo, exibirConteudo)
+//     console.log('Fim da abrirArquivo...')
+// }
 //chamar a função daqui a pouco
-abrirArquivo("arquivo.txt")
+// abrirArquivo("arquivo.txt")
 
 // function demorada(tempo){
 //   const atualMaisTempo = new Date().getTime() + 2000
