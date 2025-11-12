@@ -24,10 +24,20 @@ app.post('/eventos', (req, res) => {
     const evento = req.body
     console.log(evento)
     funcoes[evento.type](evento.payload)
-    res.end()
   }
   catch(e){}
+  res.end()
 })
 //colocar o mss para funcionar na porta 7000
 const port = 7000
-app.listen(port, () => console.log(`Classificação. Porta ${port}.`))
+app.listen(port, () => {
+  console.log(`Classificação. Porta ${port}.`)
+  axios.get('http://localhost:10000/eventos').then(({data: eventos}) => {
+    for(let evento of eventos){
+      try{
+        funcoes[evento.type](evento.payload)
+      }
+      catch(e){}
+    }
+  })
+})

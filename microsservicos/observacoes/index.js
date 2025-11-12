@@ -21,7 +21,6 @@ const funcoes = {
   ObservacaoClassificada: (observacao) => {
     //eu faço esse: atualizar a base local
     const observacoes = observacoesPorLembrete[observacao.lembreteId]
-    console.log(observacoes)
     const obsParaAtualizar = observacoes.find(o => o.id === observacao.id)
     obsParaAtualizar.status = observacao.status
     //emitir um evento de tipo ObservacaoAtualizada e cujo payload seja a propria observacao
@@ -38,7 +37,7 @@ app.post('/lembretes/:id/observacoes', (req, res) => {
   const { id : lembreteId } = req.params
   const observacao = {id: idObs, texto, lembreteId, status: 'aguardando'}
   const observacoesDoLembrete = observacoesPorLembrete[lembreteId] || []
-  observacoesDoLembrete.push({observacao})
+  observacoesDoLembrete.push(observacao)
   observacoesPorLembrete[lembreteId] = observacoesDoLembrete
   axios.post('http://localhost:10000/eventos', {
     type: 'ObservacaoCriada',
@@ -59,11 +58,9 @@ app.post('/eventos', (req, res) => {
     const evento = req.body
     console.log(evento)
     funcoes[evento.type](evento.payload)
-    res.end()
   }
-  catch(e){
-    console.log(e)
-  }
+  catch(e){}
+  res.end()
 })
 
 const port = 5000
