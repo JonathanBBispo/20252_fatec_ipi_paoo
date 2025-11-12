@@ -32,6 +32,8 @@ app.post('/eventos', (req, res) => {
     console.log(evento)
     //desestruturar o evento, criando variaveis type e payload
     const {type, payload} = evento
+    console.log(`type: ${type}`)
+    console.log(`payload: ${payload}`)
     //acessar o mapa de funções na posição type e chamar a função resultante entregando a ela, como parametro, o payload
     funcoes[type](payload)
   } catch (e) {
